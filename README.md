@@ -1,3 +1,5 @@
+[Open Walmart Sales Forecasting App](https://next-gen-project-skxuvgteermjdejweepaai.streamlit.app/)
+
 # Walmart Store Sales Forecasting
 
 Weekly sales forecasting for Walmart stores at **Store × Department × Week** level, with a
