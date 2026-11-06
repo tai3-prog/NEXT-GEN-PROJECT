@@ -1,0 +1,556 @@
+
+============================================================
+TRAIN (raw)
+============================================================
+Shape: (421570, 5)
+   Store  Dept        Date  Weekly_Sales  IsHoliday
+0      1     1  2010-02-05      24924.50      False
+1      1     1  2010-02-12      46039.49       True
+2      1     1  2010-02-19      41595.55      False
+3      1     1  2010-02-26      19403.54      False
+4      1     1  2010-03-05      21827.90      False
+<class 'pandas.DataFrame'>
+RangeIndex: 421570 entries, 0 to 421569
+Data columns (total 5 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   Store         421570 non-null  int64  
+ 1   Dept          421570 non-null  int64  
+ 2   Date          421570 non-null  str    
+ 3   Weekly_Sales  421570 non-null  float64
+ 4   IsHoliday     421570 non-null  bool   
+dtypes: bool(1), float64(1), int64(2), str(1)
+memory usage: 17.3 MB
+
+Missing values per column:
+Store           0
+Dept            0
+Date            0
+Weekly_Sales    0
+IsHoliday       0
+dtype: int64
+Total missing values: 0
+Duplicated rows: 0
+
+============================================================
+TEST (raw)
+============================================================
+Shape: (115064, 4)
+   Store  Dept        Date  IsHoliday
+0      1     1  2012-11-02      False
+1      1     1  2012-11-09      False
+2      1     1  2012-11-16      False
+3      1     1  2012-11-23       True
+4      1     1  2012-11-30      False
+<class 'pandas.DataFrame'>
+RangeIndex: 115064 entries, 0 to 115063
+Data columns (total 4 columns):
+ #   Column     Non-Null Count   Dtype
+---  ------     --------------   -----
+ 0   Store      115064 non-null  int64
+ 1   Dept       115064 non-null  int64
+ 2   Date       115064 non-null  str  
+ 3   IsHoliday  115064 non-null  bool 
+dtypes: bool(1), int64(2), str(1)
+memory usage: 3.8 MB
+
+Missing values per column:
+Store        0
+Dept         0
+Date         0
+IsHoliday    0
+dtype: int64
+Total missing values: 0
+Duplicated rows: 0
+
+============================================================
+FEATURES (raw)
+============================================================
+Shape: (8190, 12)
+    Store        Date  Temperature  ...         CPI  Unemployment  IsHoliday
+0       1  2010-02-05        42.31  ...  211.096358         8.106      False
+1       1  2010-02-12        38.51  ...  211.242170         8.106       True
+2       1  2010-02-19        39.93  ...  211.289143         8.106      False
+3       1  2010-02-26        46.63  ...  211.319643         8.106      False
+4       1  2010-03-05        46.50  ...  211.350143         8.106      False
+5       1  2010-03-12        57.79  ...  211.380643         8.106      False
+6       1  2010-03-19        54.58  ...  211.215635         8.106      False
+7       1  2010-03-26        51.45  ...  211.018042         8.106      False
+8       1  2010-04-02        62.27  ...  210.820450         7.808      False
+9       1  2010-04-09        65.86  ...  210.622857         7.808      False
+10      1  2010-04-16        66.32  ...  210.488700         7.808      False
+11      1  2010-04-23        64.84  ...  210.439123         7.808      False
+12      1  2010-04-30        67.41  ...  210.389546         7.808      False
+13      1  2010-05-07        72.55  ...  210.339968         7.808      False
+14      1  2010-05-14        74.78  ...  210.337426         7.808      False
+15      1  2010-05-21        76.44  ...  210.617093         7.808      False
+16      1  2010-05-28        80.44  ...  210.896761         7.808      False
+17      1  2010-06-04        80.69  ...  211.176428         7.808      False
+18      1  2010-06-11        80.43  ...  211.456095         7.808      False
+19      1  2010-06-18        84.11  ...  211.453772         7.808      False
+20      1  2010-06-25        84.34  ...  211.338653         7.808      False
+21      1  2010-07-02        80.91  ...  211.223533         7.787      False
+22      1  2010-07-09        80.48  ...  211.108414         7.787      False
+23      1  2010-07-16        83.15  ...  211.100385         7.787      False
+24      1  2010-07-23        83.36  ...  211.235144         7.787      False
+25      1  2010-07-30        81.84  ...  211.369903         7.787      False
+26      1  2010-08-06        87.16  ...  211.504662         7.787      False
+27      1  2010-08-13        87.00  ...  211.639421         7.787      False
+28      1  2010-08-20        86.65  ...  211.603363         7.787      False
+29      1  2010-08-27        85.22  ...  211.567306         7.787      False
+
+[30 rows x 12 columns]
+<class 'pandas.DataFrame'>
+RangeIndex: 8190 entries, 0 to 8189
+Data columns (total 12 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Store         8190 non-null   int64  
+ 1   Date          8190 non-null   str    
+ 2   Temperature   8190 non-null   float64
+ 3   Fuel_Price    8190 non-null   float64
+ 4   MarkDown1     4032 non-null   float64
+ 5   MarkDown2     2921 non-null   float64
+ 6   MarkDown3     3613 non-null   float64
+ 7   MarkDown4     3464 non-null   float64
+ 8   MarkDown5     4050 non-null   float64
+ 9   CPI           7605 non-null   float64
+ 10  Unemployment  7605 non-null   float64
+ 11  IsHoliday     8190 non-null   bool   
+dtypes: bool(1), float64(9), int64(1), str(1)
+memory usage: 791.9 KB
+
+Missing values per column:
+Store              0
+Date               0
+Temperature        0
+Fuel_Price         0
+MarkDown1       4158
+MarkDown2       5269
+MarkDown3       4577
+MarkDown4       4726
+MarkDown5       4140
+CPI              585
+Unemployment     585
+IsHoliday          0
+dtype: int64
+Total missing values: 24040
+Duplicated rows: 0
+
+============================================================
+STORES (raw)
+============================================================
+Shape: (45, 3)
+   Store Type    Size
+0      1    A  151315
+1      2    A  202307
+2      3    B   37392
+3      4    A  205863
+4      5    B   34875
+<class 'pandas.DataFrame'>
+RangeIndex: 45 entries, 0 to 44
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   Store   45 non-null     int64
+ 1   Type    45 non-null     str  
+ 2   Size    45 non-null     int64
+dtypes: int64(2), str(1)
+memory usage: 1.2 KB
+
+Missing values per column:
+Store    0
+Type     0
+Size     0
+dtype: int64
+Total missing values: 0
+Duplicated rows: 0
+
+Stores after Type encoding:
+   Store    Size  Type_A  Type_B  Type_C
+0      1  151315       1       0       0
+1      2  202307       1       0       0
+2      3   37392       0       1       0
+3      4  205863       1       0       0
+4      5   34875       0       1       0
+
+============================================================
+DATA INTEGRITY CHECKS (before merge)
+============================================================
+Duplicate ['Store', 'Date'] keys in features.csv: 0
+Duplicate ['Store'] keys in stores.csv: 0
+Duplicate ['Store', 'Dept', 'Date'] keys in train.csv: 0
+Duplicate ['Store', 'Dept', 'Date'] keys in test.csv: 0
+(Store, Date) pairs of train.csv missing from features.csv: 0
+Rows of train.csv whose Store is missing from stores.csv: 0
+(Store, Date) pairs of test.csv missing from features.csv: 0
+Rows of test.csv whose Store is missing from stores.csv: 0
+Weekday of all train/test dates: ['Friday']; gaps between consecutive weeks (days): [7]
+
+train: rows before merge 421,570 -> after merge 421,570
+IsHoliday columns identical in train: True
+test: rows before merge 115,064 -> after merge 115,064
+IsHoliday columns identical in test: True
+
+Train shape: (421570, 16)
+Train missing values:
+Store           0
+Dept            0
+Date            0
+Weekly_Sales    0
+IsHoliday       0
+Temperature     0
+Fuel_Price      0
+CPI             0
+Unemployment    0
+Size            0
+Type_A          0
+Type_B          0
+Type_C          0
+year            0
+month           0
+week            0
+dtype: int64
+Train duplicated rows: 0
+
+Test shape: (115064, 15)
+Test missing values:
+Store               0
+Dept                0
+Date                0
+IsHoliday           0
+Temperature         0
+Fuel_Price          0
+CPI             38162
+Unemployment    38162
+Size                0
+Type_A              0
+Type_B              0
+Type_C              0
+year                0
+month               0
+week                0
+dtype: int64
+Test duplicated rows: 0
+
+CPI / Unemployment missing values
+Original features file:
+CPI             585
+Unemployment    585
+dtype: int64
+Merged train:
+CPI             0
+Unemployment    0
+dtype: int64
+Merged test:
+CPI             38162
+Unemployment    38162
+dtype: int64
+
+Feature rows with missing CPI/Unemployment: 585
+Date range: 2013-05-03 00:00:00 to 2013-07-26 00:00:00
+
+MarkDown availability in features.csv (these columns are excluded from modeling):
+MarkDown1: 49.2% non-null, first value on 2011-11-11
+MarkDown2: 35.7% non-null, first value on 2011-11-11
+MarkDown3: 44.1% non-null, first value on 2011-11-11
+MarkDown4: 42.3% non-null, first value on 2011-11-11
+MarkDown5: 49.5% non-null, first value on 2011-11-11
+
+Weekly_Sales descriptive statistics:
+count    421570.000000
+mean      15981.258123
+std       22711.183519
+min       -4988.940000
+25%        2079.650000
+50%        7612.030000
+75%       20205.852500
+max      693099.360000
+Name: Weekly_Sales, dtype: float64
+Skewness: 3.2620081854656635
+Lower bound: -25109.653749999998
+Upper bound: 47395.15625
+Outliers count: 35521
+
+Outlier investigation:
+- IQR bounds: -25,110 to 47,395; 35,521 of 421,570 rows (8.4%) are flagged, all above the upper bound (0 below the lower bound).
+- Holiday-week share: 7.4% of outliers vs 7.0% of all rows.
+- Nov-Dec share: 15.7% of outliers vs 12.7% of all rows.
+- 93.8% of outlier rows belong to a Store/Dept/ISO-week combination that is an outlier in at least 2 different years (recurring seasonal peaks, not one-off glitches).
+- Top departments among outliers (dept: count): 38: 4,348, 95: 4,242, 92: 4,102, 90: 2,832, 40: 2,797 (these 5 departments hold 51.6% of all outliers).
+- Negative Weekly_Sales rows (likely returns/adjustments): 1,285. They are kept because they are real recorded values and cannot be verified as errors.
+- DECISION: outliers are NOT removed. Evidence: they are concentrated in a few high-volume departments, they recur for the same Store/Dept/week in different years, and they are only mildly over-represented in holiday and Nov-Dec weeks. That pattern points to structurally large departments and repeating seasonal peaks rather than one-off data errors. It does not prove that every single value is correct. Removing them would teach the model to under-predict the largest sales, and tree-based models split on thresholds instead of fitting one global line, so extreme values distort them less than a linear fit.
+
+Sales by holiday flag:
+                   mean   median        max   count
+IsHoliday                                          
+0          15901.445069  7589.95  406988.63  391909
+1          17035.823187  7947.74  693099.36   29661
+
+Sales by store type (Type_A, Type_B, Type_C):
+                              mean    median   count
+Type_A Type_B Type_C                                
+0      0      1        9519.532538   1149.67   42597
+       1      0       12237.075977   6187.87  163495
+1      0      0       20099.568043  10105.17  215478
+
+Top 10 departments by mean sales:
+              mean    median  count
+Dept                               
+92    75204.870531  61816.77   6435
+95    69824.423080  60774.39   6435
+38    61090.619568  57336.65   6435
+72    50566.515417  44312.36   6046
+65    45441.706224  47281.16    143
+90    45232.084488  40535.79   6435
+40    44900.702727  42717.87   6435
+2     43607.020113  41412.61   6435
+91    33687.910758  31033.63   6435
+94    33405.883963  35003.70   5685
+
+Sales by year:
+              mean    median           sum   count
+year                                              
+2010  16270.275737  7964.300  2.288886e+09  140679
+2011  15954.070675  7522.020  2.448200e+09  153453
+2012  15694.948597  7365.095  2.000133e+09  127438
+
+Sales by month:
+               mean    median           sum  count
+month                                             
+1      14126.075111  6134.210  3.325984e+08  23545
+2      16008.779217  7694.815  5.687279e+08  35526
+3      15416.657597  7490.700  5.927859e+08  38451
+4      15650.338357  7634.810  6.468598e+08  41332
+5      15776.337202  7742.745  5.571256e+08  35314
+6      16326.137002  7856.260  6.226299e+08  38137
+7      15861.419650  7550.460  6.500010e+08  40980
+8      16062.516933  7818.880  6.130902e+08  38169
+9      15095.886154  7179.490  5.787612e+08  38339
+10     15243.855576  7341.525  5.847848e+08  38362
+11     17491.031424  8067.630  4.130157e+08  23613
+12     19355.702141  9218.080  5.768386e+08  29802
+
+Correlation of each feature with Weekly_Sales:
+Type_B         -0.131219
+Type_C         -0.095388
+Store          -0.085195
+Unemployment   -0.025864
+CPI            -0.020921
+year           -0.010111
+Temperature    -0.002312
+Fuel_Price     -0.000120
+IsHoliday       0.012774
+week            0.027673
+month           0.028409
+Dept            0.148032
+Type_A          0.185417
+Size            0.243828
+Name: Weekly_Sales, dtype: float64
+
+Highly correlated feature pairs (|r| > 0.8):
+Type_A - Type_B: -0.8139
+month - week: 0.9960
+
+Creating EDA charts:
+  saved figure: reports/figures/01_weekly_sales_distribution.png
+  saved figure: reports/figures/02_weekly_sales_over_time.png
+  saved figure: reports/figures/03_avg_sales_by_month.png
+  saved figure: reports/figures/04_avg_sales_by_holiday.png
+  saved figure: reports/figures/05_avg_sales_by_store_type.png
+  saved figure: reports/figures/06_top_departments.png
+  saved figure: reports/figures/07_correlation_heatmap.png
+
+EDA insights:
+- Weekly_Sales is strongly right-skewed (skewness 3.26; mean $15,981 vs median $7,612). A small number of very large values dominate squared-error metrics such as RMSE.
+- Holiday weeks average $17,036 per record vs $15,901 for regular weeks (+7.1%), but the labeled data contains only 10 distinct holiday weeks, so this effect rests on few events.
+- Strong seasonality: month 12 has the highest average weekly sales ($19,356) and month 1 the lowest ($14,126); this pattern is consistent with seasonal demand, although the data cannot confirm the cause.
+- Store type matters: average weekly sales per record are Type A $20,100, Type B $12,237, Type C $9,520; store Size correlates with sales (r = 0.24).
+- Sales are concentrated: the top 5 departments (92, 95, 38, 72, 90) account for 28.5% of all recorded sales, so department identity is a major driver.
+
+Split date: 2012-04-13
+Development shape: (335761, 16)
+Holdout shape:     (85809, 16)
+Development date range: 2010-02-05 to 2012-04-06 (114 weeks)
+Holdout date range:     2012-04-13 to 2012-10-26 (29 weeks)
+
+Excluded from model inputs (not available pre-week): ['Temperature', 'Fuel_Price']
+WARNING - still used, availability NOT yet audited: ['CPI', 'Unemployment']
+
+X_dev:     (335761, 12) | y_dev:     (335761,)
+X_holdout: (85809, 12) | y_holdout: (85809,)
+
+Model input dtypes:
+Store             int64
+Dept              int64
+CPI             float64
+Unemployment    float64
+IsHoliday         int64
+Size              int64
+Type_A            int64
+Type_B            int64
+Type_C            int64
+year              int32
+month             int32
+week              int64
+dtype: object
+
+============================================================
+TIME-SERIES CROSS-VALIDATION FOLDS (development data only)
+============================================================
+Fold 1: train 2010-02-05 -> 2010-07-30 (26 weeks, 76,218 rows) | test 2010-08-06 -> 2010-12-31 (22 weeks, 64,461 rows)
+Fold 2: train 2010-02-05 -> 2010-12-31 (48 weeks, 140,679 rows) | test 2011-01-07 -> 2011-06-03 (22 weeks, 64,737 rows)
+Fold 3: train 2010-02-05 -> 2011-06-03 (70 weeks, 205,416 rows) | test 2011-06-10 -> 2011-11-04 (22 weeks, 64,722 rows)
+Fold 4: train 2010-02-05 -> 2011-11-04 (92 weeks, 270,138 rows) | test 2011-11-11 -> 2012-04-06 (22 weeks, 65,623 rows)
+Fold verification passed: chronological, no date shared between train and test, no test date reused.
+
+============================================================
+MODEL SELECTION BY CROSS-VALIDATION (MAE is the primary metric)
+============================================================
+
+Decision Tree grid search: 10 candidates x 4 folds in 181s
+param_model__max_depth  param_model__min_samples_leaf  mean_test_mae  std_test_mae  mean_test_rmse  mean_test_r2  rank_test_mae
+                  None                              5       2,888.66        692.97        7,357.37          0.89              1
+                  None                             10       2,915.76        735.05        7,349.80          0.89              2
+                  None                              2       2,952.49        658.06        7,632.62          0.88              3
+                  None                             20       2,995.57        704.85        7,482.67          0.89              4
+                  None                             40       3,389.30      1,127.98        8,165.15          0.86              5
+                    25                              5       5,315.65        522.39        9,523.84          0.83              6
+                    25                              2       5,333.46        488.99        9,585.77          0.82              7
+                    25                             10       5,334.54        554.15        9,541.20          0.83              8
+Best parameters: {'max_depth': None, 'min_samples_leaf': 5} | CV MAE 2,888.66
+
+Random Forest randomized search: 4 candidates x 4 folds in 531s
+ param_model__min_samples_leaf  param_model__max_features param_model__max_depth  mean_test_mae  std_test_mae  mean_test_rmse  mean_test_r2  rank_test_mae
+                             5                       0.33                   None       2,822.41        719.56        6,972.11          0.90              1
+                             5                       0.50                     25       5,023.67        555.84        8,840.79          0.85              2
+                            10                       0.50                     25       5,114.56        614.33        9,034.64          0.84              3
+                            20                       0.33                     25       5,643.41        886.46        9,810.44          0.81              4
+Best parameters: {'min_samples_leaf': 5, 'max_features': 0.33, 'max_depth': None} | CV MAE 2,822.41
+
+SELECTED MODEL (lowest mean CV MAE on development folds): Random Forest (tuned) [CV MAE 2,822.41]
+
+============================================================
+FINAL HOLDOUT EVALUATION (models fitted on development data only)
+============================================================
+
+Mean Baseline (holdout)
+MAE: 15,101.2206
+RMSE: 21,959.5257
+R2: -0.0001
+Training R2: 0.0000 | Holdout R2: -0.0001 | gap: 0.0001
+
+Linear Regression (holdout)
+MAE: 8,037.9288
+RMSE: 12,169.6101
+R2: 0.6928
+Training R2: 0.6488 | Holdout R2: 0.6928 | gap: -0.0441
+
+Decision Tree (original, leaf=10) (holdout)
+MAE: 1,962.8055
+RMSE: 4,161.9242
+R2: 0.9641
+Training R2: 0.9731 | Holdout R2: 0.9641 | gap: 0.0090
+
+Decision Tree (tuned) (holdout)
+MAE: 1,985.2816
+RMSE: 4,228.3571
+R2: 0.9629
+Training R2: 0.9817 | Holdout R2: 0.9629 | gap: 0.0188
+
+Random Forest (tuned) (holdout)
+MAE: 1,883.4129
+RMSE: 3,755.6176
+R2: 0.9707
+Training R2: 0.9672 | Holdout R2: 0.9707 | gap: -0.0036
+
+Model comparison (CV on development folds | metrics on the untouched holdout):
+                            Model      CV MAE     CV RMSE  Holdout MAE  Holdout RMSE  Holdout R2  Train R2 (dev)
+                    Mean Baseline 15,276.0007 23,147.5887  15,101.2206   21,959.5257     -0.0001          0.0000
+                Linear Regression  8,339.3787 13,967.9703   8,037.9288   12,169.6101      0.6928          0.6488
+Decision Tree (original, leaf=10)  2,915.7599  7,349.8007   1,962.8055    4,161.9242      0.9641          0.9731
+            Decision Tree (tuned)  2,888.6648  7,357.3737   1,985.2816    4,228.3571      0.9629          0.9817
+            Random Forest (tuned)  2,822.4148  6,972.1113   1,883.4129    3,755.6176      0.9707          0.9672
+
+Selected model: Random Forest (tuned) | holdout MAE 1,883.41 (87.5% lower than the mean baseline)
+
+============================================================
+ERROR ANALYSIS: Random Forest (tuned) on the holdout period
+============================================================
+Record level (Store x Dept x Week): MAE $1,883
+Store-week totals (sum over departments): MAE $56,386 (5.4% of mean store-week sales)
+
+Error by week type:
+    Week type  Records  Mean actual      MAE  Bias (actual - predicted)  MAE % of mean actual
+Holiday week     2966    16,294.69 2,265.27                     464.19                 13.90
+Regular week    82843    15,762.74 1,869.74                    -237.44                 11.86
+
+Error by month:
+  month  Records  Mean actual      MAE  Bias (actual - predicted)  MAE % of mean actual
+     4     8906    15,205.32 1,859.67                    -856.76                 12.23
+     5    11822    15,967.39 1,781.14                     -78.34                 11.15
+     6    14753    16,309.25 1,880.89                     109.68                 11.53
+     7    11798    15,893.33 1,981.16                    -228.35                 12.47
+     8    14801    16,002.35 1,990.41                     -78.52                 12.44
+     9    11854    15,239.21 1,867.71                    -397.62                 12.26
+    10    11875    15,525.19 1,791.37                    -234.57                 11.54
+
+Worst 5 stores by MAE:
+  Store  Records  Mean actual      MAE  Bias (actual - predicted)  MAE % of mean actual
+    14     2040    24,798.47 4,458.28                  -3,077.03                 17.98
+    20     2074    29,069.84 3,171.64                     127.41                 10.91
+    10     2056    25,085.74 2,939.94                  -1,229.76                 11.72
+    23     2025    20,303.17 2,925.56                     838.80                 14.41
+    28     2046    17,621.73 2,907.42                  -1,633.62                 16.50
+
+Worst 5 departments by MAE:
+  Dept  Records  Mean actual      MAE  Bias (actual - predicted)  MAE % of mean actual
+   65       29    48,131.52 7,449.62                   7,060.66                 15.48
+   92     1305    77,331.98 6,535.76                  -1,396.38                  8.45
+   38     1305    60,800.57 6,306.20                  -2,609.17                 10.37
+   72     1231    41,203.08 6,107.26                  -3,725.12                 14.82
+   95     1305    72,928.77 5,992.55                   2,567.52                  8.22
+  saved figure: reports/figures/08_actual_vs_predicted.png
+  saved figure: reports/figures/09_residual_distribution.png
+  saved figure: reports/figures/10_error_by_store.png
+  saved figure: reports/figures/11_error_by_department.png
+  saved figure: reports/figures/12_error_by_period.png
+
+============================================================
+CPI / UNEMPLOYMENT AVAILABILITY AUDIT
+============================================================
+- features.csv has CPI/Unemployment values up to 2013-04-26; 33.2% of test.csv rows (later weeks) have none.
+- CPI differs across stores at the same date (median 15 distinct values across stores per week), so it is not a single national series.
+- Within one store and calendar month CPI takes a median of 4 distinct value(s) across 39 months per store, so it changes gradually week to week.
+- The dataset has NO publication/release timestamps. Whether the CPI and Unemployment value attached to a week was actually known BEFORE that week begins CANNOT be verified from these files. Official macro statistics are typically published after the period they describe, so the value shown for a week may be later information than a true pre-week forecast would have. STATUS: UNRESOLVED. The features are kept (project decision) but flagged.
+- Ablation (Random Forest (tuned), same CV folds): CV MAE 2,822.41 with CPI+Unemployment vs 2,662.38 without them (-5.7%).
+
+============================================================
+FINAL DEPLOYMENT MODEL
+============================================================
+Fitted 'Random Forest (tuned)' on 421,570 labeled rows (2010-02-05 to 2012-10-26).
+Previous artifact preserved at /home/claude/walmart/models/walmart_model_previous_20261105_111328.pkl
+
+Saved artifacts to /home/claude/walmart/models/walmart_model.pkl
+Saved keys: ['artifact_version', 'model', 'feature_columns', 'model_name', 'best_params', 'cv_metrics', 'holdout_metrics', 'baseline_holdout_mae', 'split_date', 'trained_date_range', 'n_train_rows', 'known_stores', 'known_depts', 'excluded_features', 'unaudited_features', 'random_state', 'sklearn_version', 'created_at']
+Model: Random Forest (tuned) | pipeline steps: ['preprocess', 'model']
+Reload check passed (identical predictions on 200 sample rows).
+
+Feature importance (grouped):
+Dept (one-hot)     0.6727
+Size               0.1073
+Store (one-hot)    0.0864
+week               0.0335
+Type_A             0.0243
+CPI                0.0172
+month              0.0170
+Type_B             0.0154
+Unemployment       0.0132
+Type_C             0.0080
+IsHoliday          0.0031
+year               0.0017
+
+Wrote reports/results_summary.md
+
+Done in 16.0 minutes.
+EXIT CODE: 0
