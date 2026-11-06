@@ -1,14 +1,15 @@
-[Open Walmart Sales Forecasting App](https://next-gen-project-skxuvgteermjdejweepaai.streamlit.app/)
-
 # Walmart Store Sales Forecasting
 
+[🚀 Open Live Dashboard](https://next-gen-project-skxuvgteermjdejweepaai.streamlit.app/)
+
 Weekly sales forecasting for Walmart stores at **Store × Department × Week** level, with a
-time-series-safe evaluation, a model comparison, and a Streamlit dashboard.
+time-series-safe evaluation, model comparison, and an interactive Streamlit dashboard.
 
-> **Status:** a validated student/portfolio project. It has **not** been deployed, monitored or tested
-> prospectively, and one input-feature question (CPI / Unemployment availability) is **unresolved**
-> (see [Limitations](#8-business-insights-and-limitations)).
-
+> **Status:** Deployed on Streamlit Community Cloud and successfully smoke-tested.
+> The hosted application loads the tuned Random Forest pipeline and generates forecasts.
+> It has not been prospectively validated or continuously monitored, and one input-feature
+> question (CPI / Unemployment availability) remains unresolved
+> (see [Business Insights and Limitations](#8-business-insights-and-limitations)).
 ## Headline results (all numbers come from `reports/results_summary.md`)
 
 | Model | CV MAE | Holdout MAE | Holdout RMSE | Holdout R² |
@@ -249,8 +250,10 @@ column order and the now deterministic row order (ties on date), which change ti
 5. **About 2.75 years of data** (143 weeks) cover each season only two or three times; the CV folds with short training windows show how much weaker the model is early on.
 6. **Dollar scale and currency** are assumed; **no external business facts** about Walmart were used.
 7. **The Random Forest search was small** and the 50-tree forest was chosen for compute reasons.
-8. **No production readiness claim:** no monitoring, drift check, prospective test or deployment exists.
-
+8. **No production validation:** the application is deployed on Streamlit Community Cloud
+   and has passed an initial deployment smoke test. However, there is no ongoing monitoring,
+   data/model drift check, or prospective evaluation against subsequently observed sales.
+   Successful deployment does not establish production readiness.
 ## 9. Web application
 
 `app.py` keeps the dashboard's behavior (live forecast without a button, week-ending-Friday logic, read-only CPI/Unemployment taken from `features.csv`,
@@ -260,10 +263,31 @@ historical chart and statistics, light theme that stays readable in dark mode) a
 * The **Model details and limitations** panel states the evaluation design, the CPI/Unemployment availability problem, the missing sales history, and that the model is not production-validated.
 * It shows a warning if the installed scikit-learn version differs from the one that created the model.
 
-**Verified in this environment:** the app starts with `python -m streamlit run app.py`; the page loads without exceptions; changing store, department or date updates
-the forecast; no excluded feature is required; and on 450 sampled test rows (150 with no recorded CPI) the app's predictions equal those of `predict.py`
-with 0 mismatches. **Not verified:** deployment to any hosting service, behavior on other operating systems or other library versions.
+**Local verification:** the app starts with
+`python -m streamlit run app.py`; the page loads without exceptions; changing store,
+department or date updates the forecast; no excluded feature is required; and on
+450 sampled test rows (150 with no recorded CPI) the app's predictions equal those
+of `predict.py` with 0 mismatches.
 
+**Cloud deployment verification:** the application was successfully deployed to
+Streamlit Community Cloud:
+[Open Walmart Sales Forecasting Dashboard](https://next-gen-project-skxuvgteermjdejweepaai.streamlit.app/).
+
+The deployed application successfully:
+- Loads the saved Random Forest (tuned) pipeline.
+- Displays the model's 12 input features.
+- Generates a weekly sales forecast.
+- Retrieves CPI and Unemployment automatically from the dataset.
+- Displays historical sales statistics and the historical sales chart.
+- Shows holdout model-quality metrics and the mean baseline comparison.
+
+**Deployment smoke-test example:** Store 1, Department 1, week ending 2012-11-02
+produced a forecast of $23,389. The selected week is after the last recorded
+training week (2012-10-26), so no actual sales are available for comparison.
+
+The deployment has not yet been exhaustively tested across every store,
+department, date and edge case. It has also not undergone prospective evaluation
+or production monitoring.
 ## Reproducibility
 
 `random_state=42` everywhere, deterministic row ordering (`Date, Store, Dept`), pinned scikit-learn version in `requirements.txt`.
